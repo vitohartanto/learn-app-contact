@@ -1,10 +1,12 @@
 import ContactItem from "./ContactItem";
 
-function ContactList({ contacts }) {
+function ContactList({ contacts, onDelete }) {
   return (
     <div className="contact-list">
       {contacts.map((contact) => {
-        return <ContactItem key={contact.id} {...contact} />;
+        return (
+          <ContactItem key={contact.id} onDelete={onDelete} {...contact} />
+        );
       })}
     </div>
   );
